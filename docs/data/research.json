@@ -1,0 +1,148 @@
+[
+  {
+    "id": "rlr3",
+    "order": 2,
+    "name": "RLR³",
+    "stage": "Robust reward execution",
+    "title": "Reinforcement Learning with Robust Rubric Rewards",
+    "authors": "Ya-Qi Yu, Hao Wang, Fangyu Hong, Xiangyang Qu, et al.",
+    "intro": "Extending rubric feedback into online learning: execute each criterion faithfully, preserve its signal, and prevent additional credit from compensating for essential failures.",
+    "figure_caption": "RLR³ overview. Rubric construction, minimal-exposure execution, generative reward modeling, and policy optimization.",
+    "alt": "Paper overview of RLR3: rubrics route criteria through extraction and deterministic verification or fuzzy judging, followed by reward aggregation and policy RL.",
+    "result_label": "15-benchmark macro average",
+    "columns": [
+      "Training mixture",
+      "RLVR",
+      "RLR³",
+      "Gain"
+    ],
+    "rows": [
+      [
+        "ViRL",
+        "76.4",
+        "77.7",
+        "+1.3"
+      ],
+      [
+        "OpenMMR",
+        "76.4",
+        "78.1",
+        "+1.7"
+      ],
+      [
+        "DeepVision",
+        "77.4",
+        "78.2",
+        "+0.8"
+      ]
+    ],
+    "result_note": "Reported on Qwen3-VL-30B-A3B. Each row compares methods within the same training mixture.",
+    "details": [
+      {
+        "title": "Execute with minimal exposure",
+        "text": "Verifiable criteria use a text-only extractor followed by a deterministic verifier. Target arguments remain hidden from the extractor. Fuzzy criteria use a text-only judge with their grounding reference. Both paths exclude the source image."
+      },
+      {
+        "title": "Preserve essential failures",
+        "text": "Decoupled normalization operates criterion by criterion across a response group. Hierarchical aggregation then gates the normalized reward: one essential score below 0.5, or at least two essential scores below 1, blocks content reward. A separate format mask handles response-level violations."
+      },
+      {
+        "title": "Toward a common model foundation",
+        "text": "The open-source rubric-generator experiment initializes the generator from the same checkpoint as the policy and GenRM."
+      }
+    ],
+    "extra_table": {
+      "title": "Generator-source sensitivity · ViRL",
+      "columns": [
+        "Setting",
+        "Macro average"
+      ],
+      "rows": [
+        [
+          "RLVR",
+          "76.4"
+        ],
+        [
+          "RLR³ · proprietary rubric pipeline",
+          "77.7"
+        ],
+        [
+          "Qwen3-VL-30B-A3B-Instruct generator",
+          "77.2"
+        ],
+        [
+          "Qwen3-VL-30B-A3B-Thinking generator",
+          "75.8"
+        ]
+      ]
+    },
+    "scope": "Rubric execution combines criterion-level verification with essential-aware reward aggregation."
+  },
+  {
+    "id": "rdpo",
+    "order": 1,
+    "name": "rDPO",
+    "stage": "Rubric-guided preference construction",
+    "title": "Visual Preference Optimization with Rubric Rewards",
+    "authors": "Ya-Qi Yu, Fangyu Hong, Xiangyang Qu, Hao Wang, et al.",
+    "intro": "Establishing reusable rubric supervision: build an offline instruction–rubric pool, score target-policy responses, and select preference pairs that reflect task-relevant quality differences.",
+    "figure_caption": "rDPO overview. Seed mining, rubric drafting, and on-policy preference-data curation for DPO.",
+    "alt": "Paper overview of rDPO showing seed mining, checklist-style rubric construction and on-policy preference pair filtering.",
+    "result_label": "Public downstream method validation",
+    "columns": [
+      "Setting",
+      "Macro average"
+    ],
+    "rows": [
+      [
+        "Base model",
+        "81.14"
+      ],
+      [
+        "Outcome-based filtering",
+        "75.82"
+      ],
+      [
+        "Rubric-based filtering",
+        "82.69"
+      ]
+    ],
+    "result_note": "Public downstream evaluation. The contribution is preference-data construction and filtering; the optimization objective is standard DPO.",
+    "details": [
+      {
+        "title": "Build once, reuse across policies",
+        "text": "Seed mining retains disagreement-rich instructions. Independent rubric drafts are aggregated into essential and additional criteria. This offline instruction–rubric pool can support response generation from different target policies."
+      },
+      {
+        "title": "Score repeatedly, select deliberately",
+        "text": "Each candidate is scored three times, using a per-criterion median. Essential qualification controls chosen and rejected eligibility; weighted rewards enforce a margin. Up to four maximum-margin pairs are selected per instruction, with each unique response appearing at most twice."
+      },
+      {
+        "title": "Separate task quality from style recovery",
+        "text": "The private scaling setting includes response-style constraints. rDPO recovers the prompting-induced degradation and exceeds the unconstrained base average; the full gain over prompting should not be interpreted as an unqualified reasoning gain."
+      }
+    ],
+    "extra_table": {
+      "title": "Private scaling validation · style-constrained setting",
+      "columns": [
+        "Setting",
+        "Macro average"
+      ],
+      "rows": [
+        [
+          "Unconstrained base model",
+          "59.48"
+        ],
+        [
+          "Style-constrained prompting",
+          "52.36"
+        ],
+        [
+          "rDPO",
+          "61.01"
+        ]
+      ]
+    },
+    "scope": "Public and private settings serve different validation purposes. No empirical superiority over online GRPO is established by this study."
+  }
+]

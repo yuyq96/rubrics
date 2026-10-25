@@ -1,0 +1,76 @@
+{
+  "purpose": "rubric format examples",
+  "questions": 12,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 438,
+      "sha256": "c87653591ce11f8f8e85062bb7f70807496df7d5a2213f563de37cb2ecf1ecaf"
+    },
+    {
+      "path": "examples-000.jsonl",
+      "bytes": 9159,
+      "sha256": "026d264f4f2604389d93e0544680661ff51d9d2c9a8b6c8fc24b658cc44dbe7f"
+    },
+    {
+      "path": "images/Cauldron/robut_wikisql/968d5f6b142f308d9b0802ebbaf59c1f.jpg",
+      "bytes": 94587,
+      "sha256": "df9da2e59dca4826fc606c2d02ded5ff489512882012e4caece41268f0024abf"
+    },
+    {
+      "path": "images/DeepVision-103K/math-77k/1567_0.png",
+      "bytes": 20581,
+      "sha256": "fd3f66e266001079fd54e798d893701b5ee9d3ccdc93f5511a73b2e7a92256c7"
+    },
+    {
+      "path": "images/DeepVision-103K/math-77k/18806_0.png",
+      "bytes": 9471,
+      "sha256": "f1df772990e9b3beac97dc15fe43595899405672ad6135edef78ef7291b6b496"
+    },
+    {
+      "path": "images/DeepVision-103K/math-77k/3689_0.png",
+      "bytes": 2567,
+      "sha256": "46506a759dbf76a6b06055a97c9ddb596caf3b16de65fa2e5371d03121a7207c"
+    },
+    {
+      "path": "images/DeepVision-103K/math-77k/48224_0.png",
+      "bytes": 13331,
+      "sha256": "4405203bd84916b5abfeaaad851edd807f04bdb384a9feef15bca46c24d4f569"
+    },
+    {
+      "path": "images/DeepVision-103K/math-77k/52732_0.png",
+      "bytes": 13219,
+      "sha256": "6c0d2b360b6cba1a69c7a360c32495a281c151061710ac0f55fdcd4cfbccd5ba"
+    },
+    {
+      "path": "images/DeepVision-103K/math-77k/74393_0.png",
+      "bytes": 4058,
+      "sha256": "7dbd275adf4a7b250d86ad4393735d337f637ee6a1722511671cfbe839d36736"
+    },
+    {
+      "path": "images/DeepVision-103K/visual_logic-26k/5033_0.png",
+      "bytes": 8215,
+      "sha256": "9f16231b915fe64d3f965d1011dc2b1e70f34e68f548fbdfd92ba846eb40b40b"
+    },
+    {
+      "path": "images/OneVision/iconqa_mathv360k/89b95e8d5f2b6a323db42f0c02a02121.jpg",
+      "bytes": 3796,
+      "sha256": "bc3916a0e5363f00d748f4196f7512765aaf991de60a4b0917f04ff738d5c660"
+    },
+    {
+      "path": "images/OneVision/k12_printing/ab09f6075d697e3fc774a4b797b3d2a8.jpg",
+      "bytes": 2298,
+      "sha256": "9f3a5c3ed5bcfb6ad4acd9c515b25b4a6434fbf11254c67298882a3d5d3c2431"
+    },
+    {
+      "path": "images/OpenMMReasoner-RL-74K/thinklite_vl_hard/010372_0.png",
+      "bytes": 1318,
+      "sha256": "7a05a1a1543dc46cbe852f7d756c7f81b6ebd57e077a53e04d21502d5688b077"
+    },
+    {
+      "path": "images/Screen/6b513b66cbffd9d2ba0df86c6818eb67.jpeg",
+      "bytes": 99208,
+      "sha256": "c6ec0dea51f09a32c3f91bc1c912d727df129ae46524490428634607ba36de47"
+    }
+  ]
+}
